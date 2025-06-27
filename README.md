@@ -1,165 +1,133 @@
-# Ice Cream Parlor Management System
+Ice Cream Parlor Management System
+A Python application to manage ice cream flavors, ingredients, and customer preferences using SQLite.
 
-A simple Python application for managing ice cream flavors, ingredients, and customers using SQLite database.
+Features
+Browse flavors by season
 
-## Features
+Search flavors by name or description
 
-- Browse ice cream flavors by season
-- Search flavors by name or description
-- Shopping cart to add favorite products
-- Customer registration with allergy information
-- Suggest new flavors
-- View ingredient inventory
-- Add and view allergens
-- Simple checkout process
+Add flavors to a shopping cart
 
-## Requirements
+Register customers with allergy information
 
-- Python 3.6 or higher
-- SQLite3 (included with Python)
+Suggest new flavors
 
-## Setup and Installation
+View ingredient inventory
 
-### Method 1: Run with Python
+Add and view allergens
 
-1. Download or clone the files
-2. Make sure Python is installed:
-   ```bash
-   python --version
-   ```
-3. Run the application:
-   ```bash
-   python ice_cream_main.py
-   ```
+Checkout system with total price calculation
 
-### Method 2: Run with Docker
+Requirements
+Python 3.6 or higher
 
-1. Build the Docker image:
-   ```bash
-   docker build -t ice-cream-app .
-   ```
+SQLite3
 
-2. Run the container:
-   ```bash
-   docker run -it --rm ice-cream-app
-   ```
+Installation and Running
+Using Python
+Clone or download the project
 
-## How to Use
+Open terminal and navigate to project folder
 
-When you start the application, you'll see a menu with these options:
+Run the app:
+python ice_cream_main.py
 
-1. **Browse Flavors** - View all flavors or filter by season
-2. **Search Flavors** - Search by flavor name or description
-3. **View Cart** - See items in your cart, update quantities, or remove items
-4. **Register Customer** - Sign up with name, email, and allergies
-5. **Suggest Flavor** - Suggest new flavors (requires customer registration)
-6. **View Ingredients** - See current ingredient inventory
-7. **Add Allergen** - Add new allergens to the system
-8. **View Allergens** - See all registered allergens
-9. **Checkout** - Complete your purchase
-0. **Exit** - Close the application
+Using Docker
+Build the Docker image:
+docker build -t ice-cream-app .
 
-## Testing Steps
+Run the container:
+docker run -it --rm ice-cream-app
 
-Follow these steps to test the application:
+How to Use
+When the app starts, the menu appears with these options:
 
-### Basic Functionality Test
+Browse Flavors
 
-1. **Start the application:**
-   ```bash
-   python ice_cream_main.py
-   ```
+Search Flavors
 
-2. **Test flavor browsing:**
-   - Choose option 1 (Browse Flavors)
-   - Try filtering by season (press 1, 2, 3, or 4)
-   - Try viewing all flavors (press Enter)
-   - Add a flavor to cart by entering its ID and quantity
+View Cart
 
-3. **Test flavor search:**
-   - Choose option 2 (Search Flavors)
-   - Search for "vanilla" or "chocolate"
-   - Add search result to cart
+Register Customer
 
-4. **Test cart functionality:**
-   - Choose option 3 (View Cart)
-   - Check that items are displayed correctly
-   - Try updating quantity (option 1)
-   - Try removing an item (option 2)
-   - Verify total calculation is correct
+Suggest Flavor
 
-5. **Test customer registration:**
-   - Choose option 4 (Register Customer)
-   - Enter name: "John Smith"
-   - Enter email: "john@test.com"
-   - Enter allergies: "nuts, dairy" (or leave empty)
-   - Try registering same email again (should fail)
+View Ingredients
 
-6. **Test flavor suggestions:**
-   - Choose option 5 (Suggest Flavor)
-   - Should work only after registering as customer
-   - Suggest: "Cookies and Cream" with description
+Add Allergen
 
-7. **Test ingredient viewing:**
-   - Choose option 6 (View Ingredients)
-   - Verify ingredients are displayed with quantities and allergen info
+View Allergens
 
-8. **Test allergen management:**
-   - Choose option 8 (View Allergens) to see current list
-   - Choose option 7 (Add Allergen)
-   - Add new allergen: "Soy" with description "Soy products"
-   - Check it appears in allergen list
+Checkout
 
-9. **Test checkout:**
-   - Make sure cart has items
-   - Choose option 9 (Checkout)
-   - Confirm purchase with 'y'
-   - Verify cart is cleared
+Exit
 
-10. **Test data persistence:**
-    - Exit application (option 0)
-    - Restart application
-    - Check that customer data still exists
-    - Database file "ice_cream.db" should be created in same folder
+Test Steps
+Start the app
 
-### Expected Results
+Choose Browse Flavors and test seasonal filtering
 
-- All menu options should work without errors
-- Cart calculations should be accurate
-- Search should return correct flavors
-- Customer registration should prevent duplicate emails
-- Data should persist after restarting application
-- Database file should be created automatically
+Choose Search Flavors and try searching for "vanilla"
 
-## Database Structure
+Add items to cart
 
-The application creates these tables automatically:
+View Cart and update or remove items
 
-- **flavors** - stores ice cream flavors with season and price info
-- **ingredients** - tracks ingredient inventory and allergen status
-- **customers** - customer information including allergies
-- **suggestions** - customer flavor suggestions
-- **allergens** - list of allergens with descriptions
+Register as a customer
 
-## Files
+Suggest a new flavor
 
-- `ice_cream_main.py` - Main application file
-- `README.md` - This documentation file
-- `requirements.txt` - Python dependencies (minimal)
-- `Dockerfile` - Docker configuration
-- `ice_cream.db` - SQLite database (created automatically)
+View and add allergens
 
-## Troubleshooting
+Checkout to complete the order
 
-**"No module named sqlite3"**
-- SQLite3 comes with Python, try reinstalling Python
+Exit and restart the app to confirm data is saved
 
-**"Permission denied" errors**
-- Make sure you can write files in the current directory
+Expected Results
+All menu options should work
 
-**Application won't start**
-- Check Python version is 3.6 or higher
-- Make sure all files are in same directory
+Cart calculations should be correct
 
-**Database errors**
-- Delete "ice_cream.db" file and restart to reset database
+Duplicate email registration should not work
+
+Data should be saved in the database
+
+Flavor suggestions and allergens should be stored
+
+Database Structure
+flavors
+
+ingredients
+
+customers
+
+suggestions
+
+allergens
+
+These tables are created and managed using SQLite queries inside the code.
+
+Files in the Project
+ice_cream_main.py
+
+requirements.txt
+
+Dockerfile
+
+README.md
+
+ice_cream.db (created after first run)
+
+Docker Information
+To build and run using Docker:
+
+docker build -t ice-cream-app .
+
+docker run -it --rm ice-cream-app
+
+Code Overview
+All database operations are handled using SQLite queries
+
+Functions are grouped by features: flavors, customers, allergens, cart
+
+Code is written in Python using standard libraries only
