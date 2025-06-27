@@ -1,6 +1,14 @@
 Ice Cream Parlor Management System
 A Python application to manage ice cream flavors, ingredients, and customer preferences using SQLite.
 
+How to run:
+Open this folder in vs code
+To ensure that the system is having sqlite, run the following command:
+python -c "import sqlite3; print('SQLite is ready!')"
+Run the following commands
+cd ice-cream-parlor
+python ice_cream_main.py
+
 -->Features
 Browse flavors by season
 Search flavors by name or description
@@ -84,3 +92,6 @@ docker run -it --rm ice-cream-app
 All database operations are handled using SQLite queries
 Functions are grouped by features: flavors, customers, allergens, cart
 Code is written in Python using standard libraries only
+
+
+
