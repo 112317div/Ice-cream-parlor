@@ -1,0 +1,20 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+
+# VS Code settings
+.vscode/
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# OS-specific files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,4 @@
+# Ice Cream Parlor Dependencies
+# Uses only Python standard library - no external packages needed
+# SQLite3 included with Python
+# All other modules are built-in
