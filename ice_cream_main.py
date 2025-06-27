@@ -347,11 +347,14 @@ class IceCreamApp:
         print("\nSUGGEST FLAVOR")
         
         name = input("Flavor name: ").strip()
-        desc = input("Description: ").strip()
-        
+
         if not name:
             print("Flavor name required")
             return
+            
+        desc = input("Description: ").strip()
+        
+       
         
         suggestion_id = self.db.add_suggestion(self.current_customer['id'], name, desc)
         print(f"Suggestion submitted! ID: {suggestion_id}")
